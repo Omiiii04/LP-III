@@ -1,0 +1,15 @@
+rule Default {
+  description: "Allow participants to submit hardware transactions"
+  participant: "org.sppu.hardware.Employee"
+  operation: ALL
+  resource: "org.sppu.hardware.*"
+  action: ALLOW
+}
+
+rule System {
+  description: "Allow system administrators full access"
+  participant: "org.hyperledger.composer.system.NetworkAdmin"
+  operation: ALL
+  resource: "org.sppu.hardware.*"
+  action: ALLOW
+}

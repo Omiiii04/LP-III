@@ -1,0 +1,22 @@
+namespace org.sppu.hardware
+
+asset Hardware identified by serialNumber {
+  o String serialNumber
+  o String description
+  o String status
+  --> Employee assignedTo optional
+}
+
+participant Employee identified by employeeId {
+  o String employeeId
+  o String name
+}
+
+transaction AllocateHardware {
+  --> Hardware hardware
+  --> Employee employee
+}
+
+transaction ReturnHardware {
+  --> Hardware hardware
+}

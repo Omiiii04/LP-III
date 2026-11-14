@@ -1,0 +1,6 @@
+query selectAvailableHardware {
+  description: "Return hardware that is currently available"
+  statement:
+    SELECT org.sppu.hardware.Hardware
+      WHERE (status == "AVAILABLE")
+}
